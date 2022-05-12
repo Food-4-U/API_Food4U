@@ -12,11 +12,11 @@ namespace Exercicio2.Controllers
     public class AutenticaçãoController : ControllerBase
     {
         //POST api/<AutenticaçãoController>
-        [HttpPost]
-        [Route("[action]")]
-        public void Registar([FromBody] Cliente cliente)
-        {
-            cliente.password = CryptoUtils.Sha256(cliente.password);
+        //[HttpPost]
+        //[Route("[action]")] 
+        //public void Registar([FromBody] Cliente cliente)
+        //{
+            //cliente.password = CryptoUtils.Sha256(cliente.password);
 
             //return Cliente.Registar(cliente);
             
@@ -70,5 +70,5 @@ namespace Exercicio2.Controllers
                 }
             }
         */}
-    }
+    //}
 

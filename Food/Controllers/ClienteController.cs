@@ -30,24 +30,55 @@ namespace Exercicio2.Controllers
         [Route("[action]")]
         public string Registar([FromBody] Cliente cliente)
         {
-            cliente.password = CryptoUtils.Sha256(cliente.password);
-
-            return Cliente.Registar(cliente);
-
-
-
-            /* POST api/<UtilizadoresController>
-            [HttpPost]
-            public void Post([FromBody] Utilizadores utilizadores)
+            if (Cliente.GetEmail(cliente.email) == null)
             {
-                using (var db = new DbHelper())
+                cliente.password = CryptoUtils.Sha256(cliente.password);
+
+                return Cliente.Registar(cliente);
+            }
+            else
+            {
+                return "Cliente já registado";
+            }
+        }
+
+        
+        [HttpPost]
+        [Route("[action]")]
+
+        public string Login([FromBody] Cliente cliente)
+        {
+            if (Cliente.GetEmail(cliente.email) != null)
+            {
+                cliente.password = CryptoUtils.Sha256(cliente.password);
+                
+                if (Cliente.ClienteLogin(cliente.email, cliente.password) != null)
                 {
-                    utilizadores.id_cliente = new Random().Next();
-                    db.Utilizadores.Add(utilizadores);
-                    db.SaveChanges();
+                    return "{ \"status\" :\"ok\" }";
+                }
+                else
+                {
+                    return cliente.password;
                 }
             }
-            */
+            else
+            {
+                return "Email non existent";
+            }
+        }
+
+        /* POST api/<UtilizadoresController>
+        [HttpPost]
+        public void Post([FromBody] Utilizadores utilizadores)
+        {
+            using (var db = new DbHelper())
+            {
+                utilizadores.id_cliente = new Random().Next();
+                db.Utilizadores.Add(utilizadores);
+                db.SaveChanges();
+            }
+        }
+        */
 
             /* PUT api/<UtilizadoresController>/5
             [HttpPut("{id}")]
@@ -91,4 +122,4 @@ namespace Exercicio2.Controllers
             */
         }
     }
-}
+

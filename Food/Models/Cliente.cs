@@ -65,6 +65,52 @@ namespace Exercicio2.Models
             }
         }
 
+        public static Cliente? GetEmail(string email)
+        {
+            var dbCon = new DataBaseConnection();
+            var reader = dbCon.DbQuery("SELECT * FROM clientes WHERE email = '" + email + "';");
+            if (reader.Read())
+            {
+                var cliente = new Cliente();
+                cliente.id_cliente = reader.GetInt32(0);
+                cliente.nome = reader.GetString(1);
+                cliente.email = reader.GetString(2);
+                cliente.password = reader.GetString(3);
+                cliente.nif = reader.GetString(4);
+
+                dbCon.Close();
+                return cliente;
+            }
+            else
+            {
+                dbCon.Close();
+                return null;
+            }
+        }
+        
+        public static Cliente? ClienteLogin(string email, string password)
+        {
+            var dbCon = new DataBaseConnection();
+            var reader = dbCon.DbQuery("SELECT * FROM clientes WHERE email = '" + email + "' AND password = '" + password + "';");
+            if (reader.Read())
+            {
+                var cliente = new Cliente();
+                cliente.id_cliente = reader.GetInt32(0);
+                cliente.nome = reader.GetString(1);
+                cliente.email = reader.GetString(2);
+                cliente.password = reader.GetString(3);
+                cliente.nif = reader.GetString(4);
+
+                dbCon.Close();
+                return cliente;
+            }
+            else
+            {
+                dbCon.Close();
+                return null;
+            }
+        }
+
         public static string Registar(Cliente cliente)
         {
             var dbCon = new DataBaseConnection();
