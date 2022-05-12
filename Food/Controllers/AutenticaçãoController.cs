@@ -18,7 +18,7 @@ namespace Exercicio2.Controllers
         {
             cliente.password = CryptoUtils.Sha256(cliente.password);
 
-            return Cliente.Registar(cliente);
+            //return Cliente.Registar(cliente);
             
             /*
             clientes clientesOnDb = db.Utilizadores.Where(uti => uti.Email.Equals(utilizador.Email)).FirstOrDefault();

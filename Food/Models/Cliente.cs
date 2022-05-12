@@ -97,7 +97,7 @@ namespace Exercicio2.Models
                 "email = '" + cliente.email +"', "+
                 "password = '" + cliente.password +"', "+
                 "nif = '" + cliente.nif +"', "+
-                "WHERE id_cliente = '" + id + "";
+                "WHERE id_cliente = " + id + "";
             var result = dbCon.DbNonQuery(strQuery);
             
             dbCon.Close();
