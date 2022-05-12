@@ -139,11 +139,11 @@ namespace Exercicio2.Models
             
             String strQuery = 
                 "UPDATE clientes SET " + 
-                "nome = '" + cliente.nome +"', "+
-                "email = '" + cliente.email +"', "+
-                "password = '" + cliente.password +"', "+
-                "nif = '" + cliente.nif +"', "+
-                "WHERE id_cliente = " + id + "";
+                "nome = '" + cliente.nome + "', " +
+                "email = '" + cliente.email + "', " +
+                "password = '" + cliente.password + "', " +
+                "nif = '" + cliente.nif + "' " +
+                "WHERE id_cliente = " + id + ";";
             var result = dbCon.DbNonQuery(strQuery);
             
             dbCon.Close();

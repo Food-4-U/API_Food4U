@@ -19,10 +19,32 @@ namespace Exercicio2.Controllers
             return Cliente.GetAllItems();
         }
 
-        // Atualizar
+        // Atualizar necessita id
         [HttpPut("{id}")]
         public string Put(string id, [FromBody] Cliente cliente)
         {
+            Cliente clienteOnDB = Cliente.GetItem(id);
+
+            if (cliente.nome == null)
+            {
+                cliente.nome = clienteOnDB.nome;
+            }
+
+            if (cliente.email == null)
+            {
+                cliente.email = clienteOnDB.email;
+            }
+
+            if (cliente.password == null)
+            {
+                cliente.password = clienteOnDB.password;
+            }
+
+            if (cliente.nif == null)
+            {
+                cliente.nif = clienteOnDB.nif;
+            }
+            
             return Cliente.Update(id, cliente);
         }
 
