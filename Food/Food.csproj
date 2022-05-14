@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.4" />
     <PackageReference Include="MySql.Data" Version="8.0.29" />
     <PackageReference Include="MySqlConnector" Version="2.1.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
@@ -16,6 +17,7 @@
     <Compile Remove="Data\**" />
     <Compile Remove="Utils\DbHelper.cs" />
     <Compile Remove="WeatherForecast.cs" />
+    <Compile Remove="Controllers\IngredienteController.cs" />
   </ItemGroup>
 
   <ItemGroup>
