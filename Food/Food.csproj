@@ -17,7 +17,6 @@
     <Compile Remove="Data\**" />
     <Compile Remove="Utils\DbHelper.cs" />
     <Compile Remove="WeatherForecast.cs" />
-    <Compile Remove="Controllers\IngredienteController.cs" />
   </ItemGroup>
 
   <ItemGroup>
