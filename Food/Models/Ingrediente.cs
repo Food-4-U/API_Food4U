@@ -2,7 +2,7 @@
 using System.Configuration;
 using Food;
 
-namespace Exercicio2.Models;
+namespace Food.Models;
 
 public class Ingrediente
 {
