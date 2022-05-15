@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj": {}
+    "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\Food.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj": {
+    "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\Food.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
+        "projectUniqueName": "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\Food.csproj",
         "projectName": "Food",
-        "projectPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\obj\\",
+        "projectPath": "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\Food.csproj",
+        "packagesPath": "C:\\Users\\Utilizador\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilizador\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

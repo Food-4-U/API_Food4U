@@ -156,5 +156,24 @@ namespace Exercicio2.Models
                 return "{ \"status\" :\"error\" }";
             }
         }
+
+        public static string Delete(string id)
+        {
+            var dbCon = new DataBaseConnection();
+
+            String strQuery = "DELETE FROM clientes where id_cliente = " + id + ";";
+
+            var result = dbCon.DbNonQuery(strQuery);
+            
+            dbCon.Close();
+            if (result > 0)
+            {
+                return "{ \"status\" :\"ok\" }";
+            }
+            else
+            {
+                return "{ \"status\" :\"error\" }";
+            }
+        }
     }
 }
