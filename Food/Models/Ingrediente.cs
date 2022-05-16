@@ -11,7 +11,7 @@ public class Ingrediente
 
     public Ingrediente()
     {
-        
+
     }
 
     public static List<Ingrediente> GetAllItems()
@@ -33,7 +33,7 @@ public class Ingrediente
         dbCon.Close();
         return ingredientes;
     }
-    
+
     public static Ingrediente? GetItem(string id)
     {
         var dbCon = new DataBaseConnection();
@@ -78,10 +78,29 @@ public class Ingrediente
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO ingredientes (id_ingrediente, nome) VALUES ('" + 
+            "INSERT INTO ingredientes (id_ingrediente, nome) VALUES ('" +
             ingrediente.id_ingrediente + "', '" +
             ingrediente.nome + "');");
-        
+
+        dbCon.Close();
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {
+            return "{ \"status\" :\"error\" }";
+        }
+    }
+
+    public static string Delete(string id)
+    {
+        var dbCon = new DataBaseConnection();
+
+        String strQuery = "DELETE FROM ingredientes where id_ingrediente = " + id + ";";
+
+        var result = dbCon.DbNonQuery(strQuery);
+
         dbCon.Close();
         if (result > 0)
         {
