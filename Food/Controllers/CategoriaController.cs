@@ -32,69 +32,26 @@ namespace Exercicio2.Controllers
                 return "Ingrediente já registado";
             }
         }
-
-        /*
-        [HttpPost]
-        [Route("[action]")]
-
-        public string Login([FromBody] Cliente cliente)
-        {
-            if (Cliente.GetEmail(cliente.email) != null)
-            {
-                cliente.password = CryptoUtils.Sha256(cliente.password);
-                
-                if (Cliente.ClienteLogin(cliente.email, cliente.password) != null)
-                {
-                    return "{ \"status\" :\"ok\" }";
-                }
-                else
-                {
-                    return cliente.password;
-                }
-            }
-            else
-            {
-                return "Email non existent";
-            }
-        }
-        */
-        /* POST api/<UtilizadoresController>
-        [HttpPost]
-        public void Post([FromBody] Utilizadores utilizadores)
-        {
-            using (var db = new DbHelper())
-            {
-                utilizadores.id_cliente = new Random().Next();
-                db.Utilizadores.Add(utilizadores);
-                db.SaveChanges();
-            }
-        }
-        */
-
-        
+            
         [HttpPut("{id}")]
         public void Put(string id, [FromBody] Categoria categoria)
         {
             Categoria categoriaOnDB = Categoria.GetItem(id);
         }
         
-
-            /* DELETE api/<UtilizadoresController>/5
-            [HttpDelete("{id}")]
-            public void Delete(int id)
+        [HttpDelete("[action]/{id}")]
+        public string Delete(string id)
+        {
+            if (Categoria.GetItem(id) != null)
             {
-                using (var db = new DbHelper())
-                {
-                    Utilizadores UtilizadoresOnDb = db.Utilizadores.Find(id);
-    
-                    if (UtilizadoresOnDb != null)
-                    {
-                        db.Utilizadores.Remove(UtilizadoresOnDb);
-                        db.SaveChanges();
-                    }
-                }
+                return Categoria.Delete(id);
             }
-            */
+            else
+            {
+                return "Categoria não existe";
+            }
         }
+    
     }
+}
 
