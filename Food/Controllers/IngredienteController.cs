@@ -32,8 +32,22 @@ namespace Exercicio2.Controllers
                 return "Ingrediente já registado";
             }
         }
+        
+        // Atualizar necessita id
+        [HttpPut("[action]/{id}")]
+        public string Update(string id, [FromBody] Ingrediente ingrediente)
+        {
+            Ingrediente ingredienteOnDB = Ingrediente.GetItem(id);
 
-        [HttpDelete("{id}")]
+            if (ingrediente.nome == null)
+            {
+                ingrediente.nome = ingredienteOnDB.nome;
+            }
+
+            return Ingrediente.Update(id, ingrediente);
+        }
+
+        [HttpDelete("[action]/{id}")]
         public string Delete(string id)
         {
             if (Ingrediente.GetItem(id) != null)

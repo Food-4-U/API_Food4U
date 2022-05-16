@@ -20,8 +20,8 @@ namespace Exercicio2.Controllers
         }
 
         // Atualizar necessita id
-        [HttpPut("{id}")]
-        public string Put(string id, [FromBody] Cliente cliente)
+        [HttpPut("[action]/{id}")]
+        public string Update(string id, [FromBody] Cliente cliente)
         {
             Cliente clienteOnDB = Cliente.GetItem(id);
 
@@ -89,7 +89,7 @@ namespace Exercicio2.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("[action]/{id}")]
         public string Delete(string id)
         {
             if (Cliente.GetItem(id) != null)

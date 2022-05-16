@@ -93,6 +93,28 @@ public class Ingrediente
         }
     }
 
+    public static string Update(string id, Ingrediente ingrediente)
+    {
+        var dbCon = new DataBaseConnection();
+            
+        String strQuery = 
+            "UPDATE ingredientes SET " + 
+            "nome = '" + ingrediente.nome + "' " +
+            "WHERE id_ingrediente = " + id + ";";
+        var result = dbCon.DbNonQuery(strQuery);
+            
+        dbCon.Close();
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {
+            return "{ \"status\" :\"error\" }";
+        }
+    }
+    
+    
     public static string Delete(string id)
     {
         var dbCon = new DataBaseConnection();
