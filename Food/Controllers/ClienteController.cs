@@ -20,8 +20,8 @@ namespace Food.Controllers
         }
 
         // Atualizar necessita id
-        [HttpPut("{id}")]
-        public string Put(string id, [FromBody] Cliente cliente)
+        [HttpPut("[action]/{id}")]
+        public string Update(string id, [FromBody] Cliente cliente)
         {
             Cliente clienteOnDB = Cliente.GetItem(id);
 
@@ -44,7 +44,7 @@ namespace Food.Controllers
             {
                 cliente.nif = clienteOnDB.nif;
             }
-            
+
             return Cliente.Update(id, cliente);
         }
 
@@ -64,7 +64,7 @@ namespace Food.Controllers
             }
         }
 
-        
+
         [HttpPost]
         [Route("[action]")]
 
@@ -73,7 +73,7 @@ namespace Food.Controllers
             if (Cliente.GetEmail(cliente.email) != null)
             {
                 cliente.password = CryptoUtils.Sha256(cliente.password);
-                
+
                 if (Cliente.ClienteLogin(cliente.email, cliente.password) != null)
                 {
                     return "{ \"status\" :\"ok\" }";
@@ -89,57 +89,18 @@ namespace Food.Controllers
             }
         }
 
-        /* POST api/<UtilizadoresController>
-        [HttpPost]
-        public void Post([FromBody] Utilizadores utilizadores)
+        [HttpDelete("[action]/{id}")]
+        public string Delete(string id)
         {
-            using (var db = new DbHelper())
+            if (Cliente.GetItem(id) != null)
             {
-                utilizadores.id_cliente = new Random().Next();
-                db.Utilizadores.Add(utilizadores);
-                db.SaveChanges();
+                return Cliente.Delete(id);
+            }
+            else
+            {
+                return "Cliente não existe";
             }
         }
-        */
 
-            /* PUT api/<UtilizadoresController>/5
-            [HttpPut("{id}")]
-            public void Put(int id, [FromBody] Utilizadores utilizadores)
-            {
-                using (var db = new DbHelper())
-                {
-                    Utilizadores UtilizadoresOnDb = db.Utilizadores.Find(id);
-                    if (UtilizadoresOnDb != null)
-                    {
-                        UtilizadoresOnDb.Nome = utilizadores.Nome != null ? utilizadores.Nome : UtilizadoresOnDb.Nome;
-    
-    
-                        db.Utilizadores.Update(UtilizadoresOnDb);
-                    }
-                    else
-                    {
-                        utilizadores.Cod_Utilizadores = id;
-                        db.Utilizadores.Add(utilizadores);
-                    }
-                    db.SaveChanges();
-                }
-            }
-            */
-
-            
-            [HttpDelete("{id}")]
-            public string Delete(string id)
-            {
-                if (Cliente.GetItem(id) != null)
-                {
-                    return Cliente.Delete(id);
-                }
-                else
-                {
-                    return "Cliente não existe";
-                }
-            }
-           
-        }
     }
-
+}
