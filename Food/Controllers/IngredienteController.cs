@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Exercicio2.Models;
-using Exercicio2.Utils;
+using Food.Models;
+using Food.Utils;
+using Food.Models;
 using MySql.Data.MySqlClient;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Exercicio2.Controllers
+namespace Food.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
