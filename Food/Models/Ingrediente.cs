@@ -53,5 +53,43 @@ public class Ingrediente
             return null;
         }
     }
-    
+
+    public static Ingrediente? GetIngrediente(string desc)
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM ingredientes WHERE nome = '" + desc + "';");
+        if (reader.Read())
+        {
+            var ingrediente = new Ingrediente();
+            ingrediente.id_ingrediente = reader.GetInt32(0);
+            ingrediente.nome = reader.GetString(1);
+
+            dbCon.Close();
+            return ingrediente;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
+
+    public static string AdicionarIngrediente(Ingrediente ingrediente)
+    {
+        var dbCon = new DataBaseConnection();
+        var result = dbCon.DbNonQuery(
+            "INSERT INTO ingredientes (id_ingrediente, nome) VALUES ('" + 
+            ingrediente.id_ingrediente + "', '" +
+            ingrediente.nome + "');");
+        
+        dbCon.Close();
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {
+            return "{ \"status\" :\"error\" }";
+        }
+    }
 }

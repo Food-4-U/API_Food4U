@@ -1,70 +1,39 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Food.Models;
-using Food.Utils;
+using Exercicio2.Models;
+using Exercicio2.Utils;
 using MySql.Data.MySqlClient;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Food.Controllers
+namespace Exercicio2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class IngredienteController : ControllerBase
     {
 
         // GET: api/<UtilizadoresController>
-        [HttpGet(Name = "GetClientes")]
-        public IEnumerable<Cliente> Get()
+        [HttpGet(Name = "GetIngredientes")]
+        public IEnumerable<Ingrediente> Get()
         {
-            return Cliente.GetAllItems();
-        }
-
-        // Atualizar necessita id
-        [HttpPut("{id}")]
-        public string Put(string id, [FromBody] Cliente cliente)
-        {
-            Cliente clienteOnDB = Cliente.GetItem(id);
-
-            if (cliente.nome == null)
-            {
-                cliente.nome = clienteOnDB.nome;
-            }
-
-            if (cliente.email == null)
-            {
-                cliente.email = clienteOnDB.email;
-            }
-
-            if (cliente.password == null)
-            {
-                cliente.password = clienteOnDB.password;
-            }
-
-            if (cliente.nif == null)
-            {
-                cliente.nif = clienteOnDB.nif;
-            }
-            
-            return Cliente.Update(id, cliente);
+            return Ingrediente.GetAllItems();
         }
 
         [HttpPost]
         [Route("[action]")]
-        public string Registar([FromBody] Cliente cliente)
+        public string AdicionarIngrediente([FromBody] Ingrediente ingrediente)
         {
-            if (Cliente.GetEmail(cliente.email) == null)
+            if (Ingrediente.GetIngrediente(ingrediente.nome) == null)
             {
-                cliente.password = CryptoUtils.Sha256(cliente.password);
-
-                return Cliente.Registar(cliente);
+                return Ingrediente.AdicionarIngrediente(ingrediente);
             }
             else
             {
-                return "Cliente já registado";
+                return "Ingrediente já registado";
             }
         }
 
-        
+        /*
         [HttpPost]
         [Route("[action]")]
 
@@ -88,7 +57,7 @@ namespace Food.Controllers
                 return "Email non existent";
             }
         }
-
+        */
         /* POST api/<UtilizadoresController>
         [HttpPost]
         public void Post([FromBody] Utilizadores utilizadores)
@@ -126,20 +95,22 @@ namespace Food.Controllers
             }
             */
 
-            
+            /* DELETE api/<UtilizadoresController>/5
             [HttpDelete("{id}")]
-            public string Delete(string id)
+            public void Delete(int id)
             {
-                if (Cliente.GetItem(id) != null)
+                using (var db = new DbHelper())
                 {
-                    return Cliente.Delete(id);
-                }
-                else
-                {
-                    return "Cliente não existe";
+                    Utilizadores UtilizadoresOnDb = db.Utilizadores.Find(id);
+    
+                    if (UtilizadoresOnDb != null)
+                    {
+                        db.Utilizadores.Remove(UtilizadoresOnDb);
+                        db.SaveChanges();
+                    }
                 }
             }
-           
+            */
         }
     }
 
