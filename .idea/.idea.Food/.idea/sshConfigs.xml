@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="3.8.82.89" id="d0e6c4c0-a8c6-4587-a25d-0bf4394d26bb" keyPath="C:\Users\tiago\OneDrive\Ambiente de Trabalho\amazon.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

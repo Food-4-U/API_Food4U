@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bc7ec28e-dc44-4a5c-823b-28ca7cd82cbf" name="Food4U" url="http://food4ugrupo1.pt">
+        <fileTransfer rootFolder="/home/ubuntu/Food4U" accessType="SFTP" host="3.8.82.89" port="22" sshConfigId="d0e6c4c0-a8c6-4587-a25d-0bf4394d26bb" sshConfig="ubuntu@3.8.82.89:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
