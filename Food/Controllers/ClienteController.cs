@@ -80,12 +80,12 @@ namespace Exercicio2.Controllers
                 }
                 else
                 {
-                    return cliente.password;
+                    return "{ \"status\" :\"err\" }";
                 }
             }
             else
             {
-                return "Email non existent";
+                return "{ \"status\" :\"err\" }";
             }
         }
 
