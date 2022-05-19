@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Exercicio2.Utils
+namespace Food.Utils
 {
     public class CryptoUtils
     {
