@@ -63,6 +63,11 @@ namespace Food.Controllers
                 item.faturado = itemOnDb.faturado;
             }
 
+            if (item.url == null)
+            {
+                item.url = itemOnDb.url;
+            }
+
             return Item.Update(id, item);
         }
 
