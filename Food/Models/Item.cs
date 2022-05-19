@@ -43,7 +43,32 @@ public class Item
         dbCon.Close();
         return items;
     }
-    
+
+    public static List<Item> GetItemCategory(string categoria)
+    {
+        List<Item> items = new List<Item>();
+
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM item WHERE categoria = " + categoria + ";");
+
+        while (reader.Read())
+        {
+            var item = new Item();
+            item.id_item = reader.GetInt32(0);
+            item.nome = reader.GetString(1);
+            item.preco = reader.GetDouble(2);
+            item.temp_prep = reader.GetInt32(3);
+            item.favorito = reader.GetInt32(4);
+            item.faturado = reader.GetDouble(5);
+            item.url = reader.GetString(6);
+
+            items.Add(item);
+        }
+
+        dbCon.Close();
+        return items;
+    }
+
     public static Item? GetItem(string id)
     {
         var dbCon = new DataBaseConnection();

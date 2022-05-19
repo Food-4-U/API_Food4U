@@ -19,6 +19,12 @@ namespace Exercicio2.Controllers
             return Cliente.GetAllItems();
         }
 
+        [HttpGet("[action]/{email}")]
+        public Cliente Get(string email)
+        {
+            return Cliente.GetEmail(email);
+        }
+
         // Atualizar necessita id
         [HttpPut("[action]/{id}")]
         public string Update(string id, [FromBody] Cliente cliente)
@@ -60,7 +66,7 @@ namespace Exercicio2.Controllers
             }
             else
             {
-                return "Cliente já registado";
+                return "{ \"status\" :\"err\" }";
             }
         }
 

@@ -17,7 +17,16 @@ namespace Food.Controllers
         {
             return Item.GetAllItems();
         }
-
+        
+        //Get categoria
+        [HttpGet]
+        [Route("[action]/{categoria}")]
+        public IEnumerable<Item> ItemCategoria(string categoria)
+        {
+            return Item.GetItemCategory(categoria);
+        }
+        
+        
         [HttpPost]
         [Route("[action]")]
         public string AdicionarItem([FromBody] Item item)
@@ -28,7 +37,7 @@ namespace Food.Controllers
             }
             else
             {
-                return "Item já registado";
+                return "{ \"status\" :\"err\" }";
             }
         }
         
@@ -80,7 +89,7 @@ namespace Food.Controllers
             }
             else
             {
-                return "Item não existe";
+                return "{ \"status\" :\"err\" }";
             }
         }
 
