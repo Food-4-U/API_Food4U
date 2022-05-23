@@ -25,6 +25,12 @@ namespace Food.Controllers
             return Cliente.GetEmail(email);
         }
 
+        [HttpGet("[action]/{id}")]
+        public Cliente GetCliente(string id)
+        {
+            return Cliente.GetItem(id);
+        }
+
         // Atualizar necessita id
         [HttpPut("[action]/{id}")]
         public string Update(string id, [FromBody] Cliente cliente)
@@ -49,6 +55,31 @@ namespace Food.Controllers
             if (cliente.nif == null)
             {
                 cliente.nif = clienteOnDB.nif;
+            }
+
+            if (cliente.genero == null)
+            {
+                cliente.genero = clienteOnDB.genero;
+            }
+
+            if (cliente.idade == null)
+            {
+                cliente.idade = clienteOnDB.idade;
+            }
+
+            if (cliente.localidade == null)
+            {
+                cliente.localidade = clienteOnDB.localidade;
+            }
+
+            if (cliente.concelho == null)
+            {
+                cliente.concelho = clienteOnDB.concelho;
+            }
+
+            if (cliente.isAdmin == false)
+            {
+                cliente.isAdmin = clienteOnDB.isAdmin;
             }
 
             return Cliente.Update(id, cliente);

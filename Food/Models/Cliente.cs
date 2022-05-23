@@ -11,7 +11,11 @@ namespace Food.Models
         public string? email { get; set; }
         public string? password { get; set; }
         public string? nif { get; set; }
-
+        public string? genero {get; set; }
+        public int? idade { get; set; }
+        public string? localidade { get; set; }
+        public string? concelho { get; set; }
+        public Boolean? isAdmin { get; set; }
 
         public Cliente()
         {
@@ -34,6 +38,11 @@ namespace Food.Models
                 cliente.email = reader.GetString(2);
                 cliente.password = reader.GetString(3);
                 cliente.nif = reader.GetString(4);
+                cliente.genero = reader.GetString(5);
+                cliente.idade = reader.GetInt32(6);
+                cliente.localidade = reader.GetString(7);
+                cliente.concelho = reader.GetString(8);
+                cliente.isAdmin = reader.GetBoolean(9);
 
                 clientes.Add(cliente);
             }
@@ -54,6 +63,11 @@ namespace Food.Models
                 cliente.email = reader.GetString(2);
                 cliente.password = reader.GetString(3);
                 cliente.nif = reader.GetString(4);
+                cliente.genero = reader.GetString(5);
+                cliente.idade = reader.GetInt32(6);
+                cliente.localidade = reader.GetString(7);
+                cliente.concelho = reader.GetString(8);
+                cliente.isAdmin = reader.GetBoolean(9);
 
                 dbCon.Close();
                 return cliente;
@@ -77,6 +91,11 @@ namespace Food.Models
                 cliente.email = reader.GetString(2);
                 cliente.password = reader.GetString(3);
                 cliente.nif = reader.GetString(4);
+                cliente.genero = reader.GetString(5);
+                cliente.idade = reader.GetInt32(6);
+                cliente.localidade = reader.GetString(7);
+                cliente.concelho = reader.GetString(8);
+                cliente.isAdmin = reader.GetBoolean(9);
 
                 dbCon.Close();
                 return cliente;
@@ -100,6 +119,11 @@ namespace Food.Models
                 cliente.email = reader.GetString(2);
                 cliente.password = reader.GetString(3);
                 cliente.nif = reader.GetString(4);
+                cliente.genero = reader.GetString(5);
+                cliente.idade = reader.GetInt32(6);
+                cliente.localidade = reader.GetString(7);
+                cliente.concelho = reader.GetString(8);
+                cliente.isAdmin = reader.GetBoolean(9);
 
                 dbCon.Close();
                 return cliente;
@@ -115,12 +139,17 @@ namespace Food.Models
         {
             var dbCon = new DataBaseConnection();
             var result = dbCon.DbNonQuery(
-                "INSERT INTO clientes (id_cliente, nome, email, password, nif) VALUES ('" +
+                "INSERT INTO clientes (id_cliente, nome, email, password, nif, genero, idade, localidade, concelho, isAdmin) VALUES ('" +
                 cliente.id_cliente + "', '" +
                 cliente.nome + "', '" +
                 cliente.email + "', '" +
                 cliente.password + "', '" +
-                cliente.nif +
+                cliente.nif + "', '" +
+                cliente.genero + "', '" +
+                cliente.idade + "', '" +
+                cliente.localidade + "', '" +
+                cliente.concelho + "', '" +
+                cliente.isAdmin +
                 "');");
             dbCon.Close();
             if (result > 0)
@@ -143,6 +172,11 @@ namespace Food.Models
                 "email = '" + cliente.email + "', " +
                 "password = '" + cliente.password + "', " +
                 "nif = '" + cliente.nif + "' " +
+                "genero = '" + cliente.genero + "' " +
+                "idade = '" + cliente.idade + "' " +
+                "localidade = '" + cliente.localidade + "' " +
+                "concelho = '" + cliente.concelho + "' " +
+                "isAdmin = '" + cliente.isAdmin + "' " +
                 "WHERE id_cliente = " + id + ";";
             var result = dbCon.DbNonQuery(strQuery);
             
