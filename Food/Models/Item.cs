@@ -12,6 +12,7 @@ public class Item
     public int temp_prep { get; set; }
     public int favorito { get; set; }
     public double faturado { get; set; }
+    public string? url { get; set; } 
 
     public Item()
     {
@@ -34,6 +35,7 @@ public class Item
             item.temp_prep = reader.GetInt32(3);
             item.favorito = reader.GetInt32(4);
             item.faturado = reader.GetDouble(5);
+            item.url = reader.GetString(6);
 
             items.Add(item);
         }
@@ -41,7 +43,32 @@ public class Item
         dbCon.Close();
         return items;
     }
-    
+
+    public static List<Item> GetItemCategory(string categoria)
+    {
+        List<Item> items = new List<Item>();
+
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM item WHERE categoria = " + categoria + ";");
+
+        while (reader.Read())
+        {
+            var item = new Item();
+            item.id_item = reader.GetInt32(0);
+            item.nome = reader.GetString(1);
+            item.preco = reader.GetDouble(2);
+            item.temp_prep = reader.GetInt32(3);
+            item.favorito = reader.GetInt32(4);
+            item.faturado = reader.GetDouble(5);
+            item.url = reader.GetString(6);
+
+            items.Add(item);
+        }
+
+        dbCon.Close();
+        return items;
+    }
+
     public static Item? GetItem(string id)
     {
         var dbCon = new DataBaseConnection();
@@ -55,6 +82,7 @@ public class Item
             item.temp_prep = reader.GetInt32(3);
             item.favorito = reader.GetInt32(4);
             item.faturado = reader.GetDouble(5);
+            item.url = reader.GetString(6);
 
             dbCon.Close();
             return item;
@@ -70,13 +98,14 @@ public class Item
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO item (id_item, nome, preco, temp_prep, favorito, faturado) VALUES ('" +
+            "INSERT INTO item (id_item, nome, preco, temp_prep, favorito, faturado, url) VALUES ('" +
             item.id_item + "', '" +
             item.nome + "', '" +
             item.preco + "', '" +
             item.temp_prep + "', '" +
             item.favorito + "', '" +
-            item.faturado + "');");
+            item.faturado + "', '" +
+            item.url + "');");
 
         dbCon.Close();
         if (result > 0)
@@ -100,6 +129,7 @@ public class Item
             "temp_prep = '" + item.temp_prep + "' " +
             "favorito = '" + item.favorito + "' " +
             "faturado = '" + item.faturado + "' " +
+            "url = '" + item.url + "' " +
             "WHERE id_ingrediente = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
