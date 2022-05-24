@@ -62,19 +62,23 @@ namespace Food.Controllers
                 item.temp_prep = itemOnDb.temp_prep;
             }
 
-            if (item.favorito == null)
+            if (item.destaque == null)
             {
-                item.favorito = itemOnDb.favorito;
-            }
-
-            if (item.faturado == null)
-            {
-                item.faturado = itemOnDb.faturado;
+                item.destaque = itemOnDb.destaque;
             }
 
             if (item.url == null)
             {
                 item.url = itemOnDb.url;
+            }
+            
+            if (item.id_categoria == null)
+            {
+                item.id_categoria = itemOnDb.id_categoria;
+            }
+            if (item.id_subcategoria == null)
+            {
+                item.id_subcategoria = itemOnDb.id_subcategoria;
             }
 
             return Item.Update(id, item);
