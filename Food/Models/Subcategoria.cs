@@ -7,49 +7,48 @@ namespace Food.Models;
 
 public class Subcategoria
 {
-    /*[Key] public int id_subcategoria { get; set; }
+    [Key] public int id_subcategoria { get; set; }
     public string? nome { get; set; }
-    [ForeignKey()] public int id_categoria { get; set; }
+    
 
     public Subcategoria()
     {
         
     }
     
-    public static List<Categoria> GetAllItems()
+    public static List<Subcategoria> GetAllItems()
     {
-        List<Categoria> categorias = new List<Categoria>();
+        List<Subcategoria> subcategorias = new List<Subcategoria>();
 
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM categorias");
+        var reader = dbCon.DbQuery("SELECT * FROM subcategorias");
 
         while (reader.Read())
         {
-            var categoria = new Categoria();
-            categoria.id_categoria = reader.GetInt32(0);
-            categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
+            var subcategoria = new Subcategoria();
+            subcategoria.id_subcategoria = reader.GetInt32(0);
+            subcategoria.nome = reader.GetString(1);
 
-            categorias.Add(categoria);
+            subcategorias.Add(subcategoria);
         }
 
         dbCon.Close();
-        return categorias;
+        return subcategorias;
     }
     
-    public static Categoria? GetItem(string id)
+    public static Subcategoria? GetItem(string id)
     {
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM categorias WHERE id_categoria = " + id + ";");
+        var reader = dbCon.DbQuery("SELECT * FROM subcategorias WHERE id_subcategoria = " + id + ";");
         if (reader.Read())
         {
-            var categoria = new Categoria();
-            categoria.id_categoria = reader.GetInt32(0);
-            categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
+            var subcategoria = new Subcategoria();
+            subcategoria.id_subcategoria = reader.GetInt32(0);
+            subcategoria.nome = reader.GetString(1);
+          
 
             dbCon.Close();
-            return categoria;
+            return subcategoria;
         }
         else
         {
@@ -58,19 +57,19 @@ public class Subcategoria
         }
     }
 
-    public static Categoria? GetCategoria(string desc)
+    public static Subcategoria? GetSubcategoria(string desc)
     {
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM categorias WHERE nome = '" + desc + "';");
+        var reader = dbCon.DbQuery("SELECT * FROM subcategorias WHERE nome = '" + desc + "';");
         if (reader.Read())
         {
-            var categoria = new Categoria();
-            categoria.id_categoria = reader.GetInt32(0);
-            categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
+            var subcategoria = new Subcategoria();
+            subcategoria.id_subcategoria = reader.GetInt32(0);
+            subcategoria.nome = reader.GetString(1);
+           
 
             dbCon.Close();
-            return categoria;
+            return subcategoria;
         }
         else
         {
@@ -79,14 +78,13 @@ public class Subcategoria
         }
     }
 
-    public static string AdicionarCategoria(Categoria categoria)
+    public static string AdicionarSubcategoria(Subcategoria subcategoria)
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO categorias (id_categoria, nome, faturado) VALUES ('" + 
-            categoria.id_categoria + "', '" +
-            categoria.nome + "', '" +
-            categoria.faturado + "');");
+            "INSERT INTO subcategorias (id_subcategoria, nome) VALUES ('" + 
+            subcategoria.id_subcategoria + "', '" +
+            subcategoria.nome + "');");
         
         dbCon.Close();
         if (result > 0)
@@ -103,7 +101,7 @@ public class Subcategoria
     {
         var dbCon = new DataBaseConnection();
 
-        String strQuery = "DELETE FROM categorias where id_categorias = " + id + ";";
+        String strQuery = "DELETE FROM subcategorias where id_subcategorias = " + id + ";";
 
         var result = dbCon.DbNonQuery(strQuery);
             
@@ -117,6 +115,4 @@ public class Subcategoria
             return "{ \"status\" :\"error\" }";
         }
     }
-}
-    */
 }
