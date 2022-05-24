@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3f885f1a-ec03-4c26-b13b-76a3209b12de" name="amazon" url="">
+        <fileTransfer rootFolder="/home/ubuntu/Food" accessType="SFTP" host="34.228.159.71" port="22" sshConfigId="d0f57f77-e594-4fcc-97e8-dd69a22d7720" sshConfig="ubuntu@34.228.159.71:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

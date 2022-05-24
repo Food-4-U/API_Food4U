@@ -97,6 +97,27 @@ public class Subcategoria
         }
     }
     
+    public static string Update(string id, Subcategoria subcategoria)
+    {
+        var dbCon = new DataBaseConnection();
+            
+        String strQuery = 
+            "UPDATE subcategorias SET " + 
+            "nome = '" + subcategoria.nome + "' " +
+            "WHERE id_subcategoria = " + id + ";";
+        var result = dbCon.DbNonQuery(strQuery);
+            
+        dbCon.Close();
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {
+            return "{ \"status\" :\"error\" }";
+        }
+    }
+    
     public static string Delete(string id)
     {
         var dbCon = new DataBaseConnection();
