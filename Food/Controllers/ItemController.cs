@@ -40,6 +40,13 @@ namespace Food.Controllers
             return Item.GetItemHot();
         }
         
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<Item> OrderCategory()
+        {
+            return Item.GetItemsOrderCategory();
+        }
+        
         
         [HttpPost]
         [Route("[action]")]
