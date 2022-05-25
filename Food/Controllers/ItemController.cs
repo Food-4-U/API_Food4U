@@ -26,12 +26,26 @@ namespace Food.Controllers
             return Item.GetItemCategory(categoria);
         }
         
+        [HttpGet]
+        [Route("[action]/{subcategoria}")]
+        public IEnumerable<Item> ItemSubategoria(string subcategoria)
+        {
+            return Item.GetItemSubcategory(subcategoria);
+        }
+        
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<Item> ItemHot()
+        {
+            return Item.GetItemHot();
+        }
+        
         
         [HttpPost]
         [Route("[action]")]
         public string AdicionarItem([FromBody] Item item)
         {
-            if (Item.GetItem(item.nome) == null)
+            if (Item.GetItemNome(item.nome) == null)
             {
                 return Item.AdicionarItem(item);
             }

@@ -78,7 +78,7 @@ public class Categoria
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO categorias (id_categoria, nome, faturado) VALUES ('" + 
+            "INSERT INTO categorias (id_categoria, nome) VALUES ('" + 
             categoria.id_categoria + "', '" +
             categoria.nome + "');");
         
