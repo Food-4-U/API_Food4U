@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="amazon" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Food4U">
+      <paths name="amazon">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$/../../../../../../Program Files/dotnet/sdk/6.0.203/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/../../../../../Program Files/dotnet/sdk/6.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
             <mapping local="$PROJECT_DIR$/Food.sln" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Controllers/AutenticaçãoController.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Controllers/CategoriaController.cs" web="/" />
@@ -14,10 +14,11 @@
             <mapping local="$PROJECT_DIR$/Food/Controllers/ItemController.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/DataBaseConnection.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Food.csproj" web="/" />
-            <mapping local="$PROJECT_DIR$/Food/Models/Categoria.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Models/Cliente.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Models/Ingrediente.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Models/Item.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Food/Models/Subcategoria.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Food/Models/Categoria.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Program.cs" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Properties/launchSettings.json" web="/" />
             <mapping local="$PROJECT_DIR$/Food/Utils/CryptoUtils.cs" web="/" />

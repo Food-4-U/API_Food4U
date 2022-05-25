@@ -34,10 +34,17 @@ namespace Food.Controllers
             }
         }
             
-        [HttpPut("{id}")]
-        public void Put(string id, [FromBody] Categoria categoria)
+        [HttpPut("[action]/{id}")]
+        public string Update(string id, [FromBody] Categoria categoria)
         {
             Categoria categoriaOnDB = Categoria.GetItem(id);
+
+            if (categoria.nome == null)
+            {
+                categoria.nome = categoriaOnDB.nome;
+            }
+
+            return Categoria.Update(id ,categoria);
         }
         
         [HttpDelete("[action]/{id}")]

@@ -8,7 +8,6 @@ public class Categoria
 {
     [Key] public int id_categoria { get; set; }
     public string? nome { get; set; }
-    public double? faturado { get; set; }
 
     public Categoria()
     {
@@ -27,7 +26,6 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
 
             categorias.Add(categoria);
         }
@@ -45,7 +43,6 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
 
             dbCon.Close();
             return categoria;
@@ -66,7 +63,6 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
-            categoria.faturado = reader.GetDouble(2);
 
             dbCon.Close();
             return categoria;
@@ -82,11 +78,31 @@ public class Categoria
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO categorias (id_categoria, nome, faturado) VALUES ('" + 
+            "INSERT INTO categorias (id_categoria, nome) VALUES ('" + 
             categoria.id_categoria + "', '" +
-            categoria.nome + "', '" +
-            categoria.faturado + "');");
+            categoria.nome + "');");
         
+        dbCon.Close();
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {
+            return "{ \"status\" :\"error\" }";
+        }
+    }
+    
+    public static string Update(string id, Categoria categoria)
+    {
+        var dbCon = new DataBaseConnection();
+            
+        String strQuery = 
+            "UPDATE categorias SET " + 
+            "nome = '" + categoria.nome + "' " +
+            "WHERE id_categoria = " + id + ";";
+        var result = dbCon.DbNonQuery(strQuery);
+            
         dbCon.Close();
         if (result > 0)
         {

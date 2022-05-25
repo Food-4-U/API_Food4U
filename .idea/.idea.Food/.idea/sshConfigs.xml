@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="3.8.82.89" id="d0e6c4c0-a8c6-4587-a25d-0bf4394d26bb" keyPath="C:\Users\tiago\OneDrive\Ambiente de Trabalho\amazon.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
+      <sshConfig host="34.228.159.71" id="d0f57f77-e594-4fcc-97e8-dd69a22d7720" keyPath="C:\Users\Rafael\Downloads\amazon3.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
     </configs>
   </component>
 </project>

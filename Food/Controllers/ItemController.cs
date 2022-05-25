@@ -26,12 +26,26 @@ namespace Food.Controllers
             return Item.GetItemCategory(categoria);
         }
         
+        [HttpGet]
+        [Route("[action]/{subcategoria}")]
+        public IEnumerable<Item> ItemSubcategoria(string subcategoria)
+        {
+            return Item.GetItemSubcategory(subcategoria);
+        }
+        
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<Item> ItemHot()
+        {
+            return Item.GetItemHot();
+        }
+        
         
         [HttpPost]
         [Route("[action]")]
         public string AdicionarItem([FromBody] Item item)
         {
-            if (Item.GetItem(item.nome) == null)
+            if (Item.GetItemNome(item.nome) == null)
             {
                 return Item.AdicionarItem(item);
             }
@@ -62,19 +76,23 @@ namespace Food.Controllers
                 item.temp_prep = itemOnDb.temp_prep;
             }
 
-            if (item.favorito == null)
+            if (item.destaque == null)
             {
-                item.favorito = itemOnDb.favorito;
-            }
-
-            if (item.faturado == null)
-            {
-                item.faturado = itemOnDb.faturado;
+                item.destaque = itemOnDb.destaque;
             }
 
             if (item.url == null)
             {
                 item.url = itemOnDb.url;
+            }
+            
+            if (item.id_categoria == null)
+            {
+                item.id_categoria = itemOnDb.id_categoria;
+            }
+            if (item.id_subcategoria == null)
+            {
+                item.id_subcategoria = itemOnDb.id_subcategoria;
             }
 
             return Item.Update(id, item);
