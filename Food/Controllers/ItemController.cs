@@ -28,7 +28,7 @@ namespace Food.Controllers
         
         [HttpGet]
         [Route("[action]/{subcategoria}")]
-        public IEnumerable<Item> ItemSubategoria(string subcategoria)
+        public IEnumerable<Item> ItemSubcategoria(string subcategoria)
         {
             return Item.GetItemSubcategory(subcategoria);
         }
