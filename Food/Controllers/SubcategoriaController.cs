@@ -26,6 +26,13 @@ namespace Food.Controllers
             return Subcategoria.GetSubcategoria(subcategoria);
         }
         
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public Subcategoria GetItem(string id)
+        {
+            return Subcategoria.GetSubcategoria(id);
+        }
+        
         
         [HttpPost]
         [Route("[action]")]

@@ -20,6 +20,14 @@ namespace Food.Controllers
             return Categoria.GetAllItems();
         }
 
+        [HttpGet]
+        [Route("[action]/{id}")]
+
+        public Categoria Get(string id)
+        {
+            return Categoria.GetItem(id);
+        }
+
         [HttpPost]
         [Route("[action]")]
         public string AdicionarCategoria([FromBody] Categoria categoria)
