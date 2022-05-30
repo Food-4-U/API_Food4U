@@ -48,6 +48,33 @@ public class Item
         dbCon.Close();
         return items;
     }
+    
+    public static List<Item> GetItemsOrderCategory()
+    {
+        List<Item> items = new List<Item>();
+
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM itens ORDER BY id_categoria");
+
+        while (reader.Read())
+        {
+            var item = new Item();
+            item.id_item = reader.GetInt32(0);
+            item.nome = reader.GetString(1);
+            item.preco = reader.GetDouble(2);
+            item.temp_prep = reader.GetInt32(3);
+            item.destaque = reader.GetBoolean(4);
+            item.url = reader.GetString(5);
+            item.id_categoria = reader.GetInt32(6);
+            item.id_subcategoria = reader.GetInt32(7);
+            item.avaliação = reader.GetDouble(8);
+
+            items.Add(item);
+        }
+
+        dbCon.Close();
+        return items;
+    }
 
     public static List<Item> GetItemCategory(string categoria)
     {

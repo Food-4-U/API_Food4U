@@ -17,7 +17,14 @@ namespace Food.Controllers
         {
             return Item.GetAllItems();
         }
-        
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public Item Get(string id)
+        {
+            return Item.GetItem(id);
+        }
+
         //Get categoria
         [HttpGet]
         [Route("[action]/{categoria}")]
@@ -38,6 +45,13 @@ namespace Food.Controllers
         public IEnumerable<Item> ItemHot()
         {
             return Item.GetItemHot();
+        }
+        
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<Item> OrderCategory()
+        {
+            return Item.GetItemsOrderCategory();
         }
         
         
