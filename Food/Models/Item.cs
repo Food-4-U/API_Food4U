@@ -157,6 +157,25 @@ public class Item
         }
     }
     
+    public static string? GetImageURL(string id)
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM itens WHERE id_item = " + id + ";");
+        if (reader.Read())
+        {
+            var item = new Item();
+            item.url = reader.GetString(5);
+            
+            dbCon.Close();
+            return item.url;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
+    
     public static Item? GetItemNome(string nome)
     {
         var dbCon = new DataBaseConnection();
