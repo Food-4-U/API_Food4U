@@ -17,7 +17,14 @@ namespace Food.Controllers
         {
             return Item.GetAllItems();
         }
-        
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public Item Get(string id)
+        {
+            return Item.GetItem(id);
+        }
+
         //Get categoria
         [HttpGet]
         [Route("[action]/{categoria}")]
