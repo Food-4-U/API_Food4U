@@ -171,11 +171,11 @@ namespace Food.Models
                 "nome = '" + cliente.nome + "', " +
                 "email = '" + cliente.email + "', " +
                 "password = '" + cliente.password + "', " +
-                "nif = '" + cliente.nif + "' " +
-                "genero = '" + cliente.genero + "' " +
-                "idade = '" + cliente.idade + "' " +
-                "localidade = '" + cliente.localidade + "' " +
-                "concelho = '" + cliente.concelho + "' " +
+                "nif = '" + cliente.nif + "', " +
+                "genero = '" + cliente.genero + "', " +
+                "idade = '" + cliente.idade + "', " +
+                "localidade = '" + cliente.localidade + "', " +
+                "concelho = '" + cliente.concelho + "', " +
                 "isAdmin = '" + cliente.isAdmin + "' " +
                 "WHERE id_cliente = " + id + ";";
             var result = dbCon.DbNonQuery(strQuery);

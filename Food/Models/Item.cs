@@ -275,14 +275,14 @@ public class Item
         String strQuery = 
             "UPDATE itens SET " + 
             "nome = '" + item.nome + "', " +
-            "preco = " + item.preco + ", " +
-            "temp_prep = " + item.temp_prep + ", " +
-            "destaque = " + item.destaque + ", " +
+            "preco = '" + item.preco + "', " +
+            "temp_prep = '" + item.temp_prep + "', " +
+            "destaque = '" + item.destaque + "', " +
             "url = '" + item.url + "', " +
             "id_categoria = " + item.id_categoria + ", " +
             "id_subcategoria = " + item.id_subcategoria + ", " +
-            "avaliação = " + item.avaliação + " " +
-            "WHERE id_item = " + id + ";";
+            "avaliação = '" + item.avaliação + "' " +
+            "WHERE id_item = " + id;
         var result = dbCon.DbNonQuery(strQuery);
             
         dbCon.Close();

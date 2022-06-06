@@ -99,7 +99,7 @@ public class Ingrediente
             
         String strQuery = 
             "UPDATE ingredientes SET " + 
-            "nome = '" + ingrediente.nome + "' " +
+            "nome = '" + ingrediente.nome + "', " +
             "WHERE id_ingrediente = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             

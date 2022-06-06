@@ -138,7 +138,7 @@ public class Categoria
             
         String strQuery = 
             "UPDATE categorias SET " + 
-            "nome = '" + categoria.nome + "' " +
+            "nome = '" + categoria.nome + "', " +
             "WHERE id_categoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             

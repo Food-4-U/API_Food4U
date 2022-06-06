@@ -141,7 +141,7 @@ public class Subcategoria
             
         String strQuery = 
             "UPDATE subcategorias SET " + 
-            "nome = '" + subcategoria.nome + "' " +
+            "nome = '" + subcategoria.nome + "', " +
             "WHERE id_subcategoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
