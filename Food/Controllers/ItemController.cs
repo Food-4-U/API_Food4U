@@ -69,6 +69,13 @@ namespace Food.Controllers
             }
         }
         
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public string ItemURL(string id)
+        {
+            return Item.GetImageURL(id);
+        }
+        
         // Atualizar necessita id
         [HttpPut("[action]/{id}")]
         public string Update(string id, [FromBody] Item item)

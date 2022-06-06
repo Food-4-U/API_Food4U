@@ -77,6 +77,25 @@ public class Subcategoria
             return null;
         }
     }
+    
+    public static int? GetIDSubcategoria(string name)
+    {
+
+        var id = new int();
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT id_subcategoria FROM subcategorias WHERE nome = '" + name + "';");
+        if (reader.Read())
+        {
+            id = reader.GetInt32(0);
+            dbCon.Close();
+            return id;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
 
     public static string AdicionarSubcategoria(Subcategoria subcategoria)
     {
@@ -95,6 +114,25 @@ public class Subcategoria
         {
             return "{ \"status\" :\"error\" }";
         }
+    }
+    
+    public static List<string> GetNome()
+    {
+
+        List<string> nomes = new List<string>();
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT nome FROM subcategorias");
+        while (reader.Read())
+        {
+            var nome = "";
+            nome = reader.GetString(0);
+            
+            nomes.Add(nome);
+        }
+
+        dbCon.Close();
+        return nomes;
+
     }
     
     public static string Update(string id, Subcategoria subcategoria)
