@@ -30,7 +30,21 @@ namespace Food.Controllers
         [Route("[action]/{id}")]
         public Subcategoria GetItem(string id)
         {
-            return Subcategoria.GetSubcategoria(id);
+            return Subcategoria.GetItem(id);
+        }
+        
+        [HttpGet]
+        [Route("[action]/{name}")]
+        public int? GetIDSubcategory(string name)
+        {
+            return Subcategoria.GetIDSubcategoria(name);
+        }
+        
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<string> GetNome()
+        {
+            return Subcategoria.GetNome();
         }
         
         

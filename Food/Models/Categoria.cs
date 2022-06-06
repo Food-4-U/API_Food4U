@@ -54,6 +54,45 @@ public class Categoria
         }
     }
 
+    public static List<string> GetNome()
+    {
+
+        List<string> nomes = new List<string>();
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT nome FROM categorias");
+        while (reader.Read())
+        {
+            var nome = "";
+            nome = reader.GetString(0);
+            
+            nomes.Add(nome);
+        }
+
+        dbCon.Close();
+        return nomes;
+
+    }
+
+    public static int? GetIDCategoria(string name)
+    {
+
+        var id = new int();
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT id_categoria FROM categorias WHERE nome = '" + name + "';");
+        if (reader.Read())
+        {
+            id = reader.GetInt32(0);
+            dbCon.Close();
+            return id;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
+
+
     public static Categoria? GetCategoria(string desc)
     {
         var dbCon = new DataBaseConnection();

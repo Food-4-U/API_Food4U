@@ -27,6 +27,28 @@ namespace Food.Controllers
         {
             return Categoria.GetItem(id);
         }
+        
+        [HttpGet]
+        [Route("[action]/{name}")]
+
+        public Categoria GetCategoria(string name)
+        {
+            return Categoria.GetCategoria(name);
+        }
+        
+        [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<string> GetNome()
+        {
+            return Categoria.GetNome();
+        }
+        
+        [HttpGet]
+        [Route("[action]/{name}")]
+        public int? GetIDCategory(string name)
+        {
+            return Categoria.GetIDCategoria(name);
+        }
 
         [HttpPost]
         [Route("[action]")]
