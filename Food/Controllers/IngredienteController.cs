@@ -19,9 +19,14 @@ namespace Food.Controllers
         {
             return Ingrediente.GetAllItems();
         }
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public List<String> GetItensIngredientes(string id)
+        {
+            return Ingrediente.GetItemIngredientes(id);
+        }
 
         [HttpPost]
-        [Route("[action]")]
         public string AdicionarIngrediente([FromBody] Ingrediente ingrediente)
         {
             if (Ingrediente.GetIngrediente(ingrediente.nome) == null)

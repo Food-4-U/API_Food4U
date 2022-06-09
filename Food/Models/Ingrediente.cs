@@ -33,6 +33,25 @@ public class Ingrediente
         dbCon.Close();
         return ingredientes;
     }
+    
+    public static List<String> GetItemIngredientes(string id)
+    {
+        List<String> ingredientes = new List<String>();
+
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT u.nome FROM itens_ingredientes i JOIN ingredientes u using (id_ingrediente) JOIN itens it USING(id_item) WHERE it.id_item = " + id + ";");
+
+        while (reader.Read())
+        {
+            var ingrediente = "";
+            ingrediente = reader.GetString(0);
+
+            ingredientes.Add(ingrediente);
+        }
+
+        dbCon.Close();
+        return ingredientes;
+    }
 
     public static Ingrediente? GetItem(string id)
     {
