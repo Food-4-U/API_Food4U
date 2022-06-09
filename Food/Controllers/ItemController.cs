@@ -54,6 +54,20 @@ namespace Food.Controllers
             return Item.GetItemsOrderCategory();
         }
         
+        [HttpGet]
+        [Route("[action]/{id}")]
+        public IEnumerable<Item> Favoritos(string id)
+        {
+            return Item.Favorito(id);
+        }
+        
+        [HttpGet]
+        [Route("[action]/{nome}")]
+        public IEnumerable<Item> Search(string nome)
+        {
+            return Item.SearchItem(nome);
+        }
+        
         
         [HttpPost]
         [Route("[action]")]
