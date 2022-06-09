@@ -34,6 +34,13 @@ namespace Food.Controllers
         }
         
         [HttpGet]
+        [Route("[action]")]
+        public IEnumerable<Item> ItemTopRated()
+        {
+            return Item.GetItemTopRated();
+        }
+        
+        [HttpGet]
         [Route("[action]/{subcategoria}")]
         public IEnumerable<Item> ItemSubcategoria(string subcategoria)
         {

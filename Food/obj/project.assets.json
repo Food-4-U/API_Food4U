@@ -9109,19 +9109,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rafael\\.nuget\\packages\\": {}
+    "C:\\Users\\tiago\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
+      "projectUniqueName": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj",
       "projectName": "Food",
-      "projectPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
-      "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\obj\\",
+      "projectPath": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj",
+      "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9182,7 +9182,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

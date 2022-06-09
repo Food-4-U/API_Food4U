@@ -156,6 +156,33 @@ public class Item
         dbCon.Close();
         return items;
     }
+    
+    public static List<Item> GetItemTopRated()
+    {
+        List<Item> items = new List<Item>();
+
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM itens WHERE id_categoria = " + 2 + " ORDER BY avaliação DESC LIMIT 4;");
+
+        while (reader.Read())
+        {
+            var item = new Item();
+            item.id_item = reader.GetInt32(0);
+            item.nome = reader.GetString(1);
+            item.preco = reader.GetDecimal(2);
+            item.temp_prep = reader.GetInt32(3);
+            item.destaque = reader.GetBoolean(4);
+            item.url = reader.GetString(5);
+            item.id_categoria = reader.GetInt32(6);
+            item.id_subcategoria = reader.GetInt32(7);
+            item.avaliação = reader.GetDecimal(8);
+
+            items.Add(item);
+        }
+
+        dbCon.Close();
+        return items;
+    }
 
     public static Item? GetItem(string id)
     {
