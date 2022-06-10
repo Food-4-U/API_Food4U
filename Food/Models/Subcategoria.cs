@@ -160,7 +160,7 @@ public class Subcategoria
     {
         var dbCon = new DataBaseConnection();
 
-        String strQuery = "DELETE FROM subcategorias where id_subcategorias = " + id + ";";
+        String strQuery = "DELETE FROM subcategorias WHERE id_subcategoria = " + id + ";";
 
         var result = dbCon.DbNonQuery(strQuery);
             

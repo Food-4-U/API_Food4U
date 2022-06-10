@@ -157,7 +157,7 @@ public class Categoria
     {
         var dbCon = new DataBaseConnection();
 
-        String strQuery = "DELETE FROM categorias where id_categorias = " + id + ";";
+        String strQuery = "DELETE FROM categorias where id_categoria = " + id + ";";
 
         var result = dbCon.DbNonQuery(strQuery);
             
