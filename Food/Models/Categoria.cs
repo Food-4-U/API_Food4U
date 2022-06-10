@@ -138,7 +138,7 @@ public class Categoria
             
         String strQuery = 
             "UPDATE categorias SET " + 
-            "nome = '" + categoria.nome + "', " +
+            "nome = '" + categoria.nome + "' " +
             "WHERE id_categoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
@@ -157,7 +157,7 @@ public class Categoria
     {
         var dbCon = new DataBaseConnection();
 
-        String strQuery = "DELETE FROM categorias where id_categorias = " + id + ";";
+        String strQuery = "DELETE FROM categorias where id_categoria = " + id + ";";
 
         var result = dbCon.DbNonQuery(strQuery);
             

@@ -141,7 +141,7 @@ public class Subcategoria
             
         String strQuery = 
             "UPDATE subcategorias SET " + 
-            "nome = '" + subcategoria.nome + "', " +
+            "nome = '" + subcategoria.nome + "' " +
             "WHERE id_subcategoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
@@ -160,7 +160,7 @@ public class Subcategoria
     {
         var dbCon = new DataBaseConnection();
 
-        String strQuery = "DELETE FROM subcategorias where id_subcategorias = " + id + ";";
+        String strQuery = "DELETE FROM subcategorias WHERE id_subcategoria = " + id + ";";
 
         var result = dbCon.DbNonQuery(strQuery);
             
