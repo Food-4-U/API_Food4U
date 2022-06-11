@@ -9,6 +9,7 @@ public class Subcategoria
 {
     [Key] public int id_subcategoria { get; set; }
     public string? nome { get; set; }
+    public string?  url { get; set; }
     
 
     public Subcategoria()
@@ -28,6 +29,7 @@ public class Subcategoria
             var subcategoria = new Subcategoria();
             subcategoria.id_subcategoria = reader.GetInt32(0);
             subcategoria.nome = reader.GetString(1);
+            subcategoria.url = reader.GetString(2);
 
             subcategorias.Add(subcategoria);
         }
@@ -45,6 +47,7 @@ public class Subcategoria
             var subcategoria = new Subcategoria();
             subcategoria.id_subcategoria = reader.GetInt32(0);
             subcategoria.nome = reader.GetString(1);
+            subcategoria.url = reader.GetString(2);
           
 
             dbCon.Close();
@@ -66,6 +69,7 @@ public class Subcategoria
             var subcategoria = new Subcategoria();
             subcategoria.id_subcategoria = reader.GetInt32(0);
             subcategoria.nome = reader.GetString(1);
+            subcategoria.url = reader.GetString(2);
            
 
             dbCon.Close();
@@ -101,9 +105,10 @@ public class Subcategoria
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO subcategorias (id_subcategoria, nome) VALUES ('" + 
+            "INSERT INTO subcategorias (id_subcategoria, nome, url) VALUES ('" + 
             subcategoria.id_subcategoria + "', '" +
-            subcategoria.nome + "');");
+            subcategoria.nome + "', '" +
+            subcategoria.url + "');");
         
         dbCon.Close();
         if (result > 0)
@@ -141,7 +146,8 @@ public class Subcategoria
             
         String strQuery = 
             "UPDATE subcategorias SET " + 
-            "nome = '" + subcategoria.nome + "' " +
+            "nome = '" + subcategoria.nome + "', " +
+            "url = '" + subcategoria.url + "' " +
             "WHERE id_subcategoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
