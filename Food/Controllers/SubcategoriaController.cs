@@ -73,6 +73,11 @@ namespace Food.Controllers
                 subcategoria.nome = subcategoriaOnDb.nome;
             }
             
+            if (subcategoria.url == null)
+            {
+                subcategoria.url = subcategoriaOnDb.url;
+            }
+            
             return Subcategoria.Update(id, subcategoria);
         }
 

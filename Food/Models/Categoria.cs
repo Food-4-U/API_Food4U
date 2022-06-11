@@ -8,6 +8,7 @@ public class Categoria
 {
     [Key] public int id_categoria { get; set; }
     public string? nome { get; set; }
+    public string? url {get; set;}
 
     public Categoria()
     {
@@ -26,6 +27,7 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
+            categoria.url = reader.GetString(2);
 
             categorias.Add(categoria);
         }
@@ -43,6 +45,7 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
+            categoria.url = reader.GetString(2);
 
             dbCon.Close();
             return categoria;
@@ -102,6 +105,7 @@ public class Categoria
             var categoria = new Categoria();
             categoria.id_categoria = reader.GetInt32(0);
             categoria.nome = reader.GetString(1);
+            categoria.url = reader.GetString(2);
 
             dbCon.Close();
             return categoria;
@@ -117,9 +121,10 @@ public class Categoria
     {
         var dbCon = new DataBaseConnection();
         var result = dbCon.DbNonQuery(
-            "INSERT INTO categorias (id_categoria, nome) VALUES ('" + 
+            "INSERT INTO categorias (id_categoria, nome, url) VALUES ('" + 
             categoria.id_categoria + "', '" +
-            categoria.nome + "');");
+            categoria.nome + "', '" +
+            categoria.url + "');");
         
         dbCon.Close();
         if (result > 0)
@@ -138,7 +143,8 @@ public class Categoria
             
         String strQuery = 
             "UPDATE categorias SET " + 
-            "nome = '" + categoria.nome + "' " +
+            "nome = '" + categoria.nome + "', " +
+            "url = '" + categoria.url + "' " +
             "WHERE id_categoria = " + id + ";";
         var result = dbCon.DbNonQuery(strQuery);
             
