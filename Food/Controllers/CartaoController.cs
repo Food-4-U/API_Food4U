@@ -6,7 +6,7 @@ namespace Food.Controllers;
 public class CartaoController
 {
     [HttpGet]
-    [Route("[action]")]
+    [Route("[action]/{id}")]
     public IEnumerable<Cartao> GetCartoesCliente(string id)
     {
         return Cartao.GetCartaoCliente(id);
@@ -14,8 +14,8 @@ public class CartaoController
     
 
     [HttpPost]
-    [Route("[action]/{id}")]
-    public string RegistarCartao(Cartao cartao)
+    [Route("[action]")]
+    public string RegistarCartao([FromBody]Cartao cartao)
     {
         return Cartao.AdicionarCartao(cartao);
     }

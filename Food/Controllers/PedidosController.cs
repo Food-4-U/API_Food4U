@@ -13,7 +13,7 @@ public class PedidosController
     }
     
     [HttpGet]
-    [Route("[action]")]
+    [Route("[action]/{id}")]
     public IEnumerable<Pedido> GetPedidosCliente(string id)
     {
         return Pedido.GetPedidosClientes(id);
@@ -21,8 +21,8 @@ public class PedidosController
     
 
     [HttpPost]
-    [Route("[action]/{id}")]
-    public string RegistarPedidos(Pedido pedido)
+    [Route("[action]")]
+    public string RegistarPedidos([FromBody]Pedido pedido)
     {
         return Pedido.AdicionarPedido(pedido);
     }
