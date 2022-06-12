@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "21UZ8e+PTVEX0tBGobFh0r6ODzbwEIjn3HC/ekMk2OfobPPJQ5edYvmwG9QNoS9+65M8k11pwsnomxorHYu6Gw==",
+  "dgSpecHash": "Z23E7L31WVMS4e7kuCdXvg6wQns+qOSjYlqO7AzBUXgh/GuwfOLIde/W56roTaNWKwbKL/NRFMMlyZHh4GwP5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Utilizador\\Desktop\\api\\API_Food4U\\Food\\Food.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\Utilizador\\.nuget\\packages\\nuget.projectmodel\\5.11.0\\nuget.projectmodel.5.11.0.nupkg.sha512",
     "C:\\Users\\Utilizador\\.nuget\\packages\\nuget.protocol\\5.11.0\\nuget.protocol.5.11.0.nupkg.sha512",
     "C:\\Users\\Utilizador\\.nuget\\packages\\nuget.versioning\\5.11.0\\nuget.versioning.5.11.0.nupkg.sha512",
+    "C:\\Users\\Utilizador\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\Utilizador\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Utilizador\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Utilizador\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
