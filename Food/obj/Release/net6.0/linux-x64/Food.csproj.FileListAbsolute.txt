@@ -1098,3 +1098,4 @@ C:\Users\Rafael\Desktop\Food-4-U\Food\Food\obj\Release\net6.0\linux-x64\refint\F
 C:\Users\Rafael\Desktop\Food-4-U\Food\Food\obj\Release\net6.0\linux-x64\Food.pdb
 C:\Users\Rafael\Desktop\Food-4-U\Food\Food\obj\Release\net6.0\linux-x64\Food.genruntimeconfig.cache
 C:\Users\Rafael\Desktop\Food-4-U\Food\Food\obj\Release\net6.0\linux-x64\ref\Food.dll
+C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\bin\Release\net6.0\linux-x64\QRCoder.dll

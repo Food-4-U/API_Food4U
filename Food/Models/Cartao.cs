@@ -3,11 +3,11 @@
 public class Cartao
 {
     public int id_cartao { get; set; }
-    public float numero { get; set; }
+    public string numero { get; set; }
     public string nome_cartao { get; set; }
     public string data_vencimento { get; set; }
-    public int id_cliente { get; set; }
     public int cvc { get; set; }
+    public int id_cliente { get; set; }
 
     public Cartao()
     {
@@ -20,13 +20,13 @@ public class Cartao
         var destaqueResult = 0;
         
         var result = dbCon.DbNonQuery(
-            "INSERT INTO cartoes (id_cartao, numero, nome_cartao, data_vencimento, id_cliente, cvc) VALUES ('" +
+            "INSERT INTO cartoes (id_cartao, numero, nome_cartao, data_vencimento, cvc, id_cliente) VALUES ('" +
             cartao.id_cartao + "', '" +
             cartao.numero + "', '" +
             cartao.nome_cartao + "', '" +
             cartao.data_vencimento + "', '" +
-            cartao.id_cliente + "', '" +
-            cartao.cvc + "');");
+            cartao.cvc + "', '" +
+            cartao.id_cliente + "');");
         
         dbCon.Close();
             
@@ -50,12 +50,12 @@ public class Cartao
         {
             Cartao cartao = null;
             cartao.id_cartao = reader.GetInt32(0);
-            cartao.numero = reader.GetFloat(1);
+            cartao.numero = reader.GetString(1);
             cartao.nome_cartao = reader.GetString(2);
             cartao.data_vencimento = reader.GetString(3);
-            cartao.id_cliente = reader.GetInt32(4);
-            cartao.cvc = reader.GetInt32(5);
-            
+            cartao.cvc = reader.GetInt32(4);
+            cartao.id_cliente = reader.GetInt32(5);
+
             cartoes.Add(cartao);
         }
 

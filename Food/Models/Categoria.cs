@@ -8,7 +8,7 @@ public class Categoria
 {
     [Key] public int id_categoria { get; set; }
     public string? nome { get; set; }
-    public string? url {get; set;}
+    public string? url { get; set; }
 
     public Categoria()
     {

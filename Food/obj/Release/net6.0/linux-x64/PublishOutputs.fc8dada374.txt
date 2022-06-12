@@ -365,6 +365,7 @@ C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\NuGet.Packaging.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\NuGet.ProjectModel.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\NuGet.Protocol.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\NuGet.Versioning.dll
+C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\QRCoder.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API LOCAL\Swashbuckle.AspNetCore.SwaggerUI.dll

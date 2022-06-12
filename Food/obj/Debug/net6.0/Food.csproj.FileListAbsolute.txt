@@ -748,3 +748,4 @@ C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\obj\De
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\obj\Debug\net6.0\Food.pdb
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\obj\Debug\net6.0\Food.genruntimeconfig.cache
 C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\obj\Debug\net6.0\ref\Food.dll
+C:\Users\tiago\OneDrive\Ambiente de Trabalho\API Food_4_U\API_Food4U\Food\bin\Debug\net6.0\QRCoder.dll
