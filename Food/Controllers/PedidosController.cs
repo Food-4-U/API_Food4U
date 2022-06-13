@@ -28,9 +28,9 @@ public class PedidosController
     }
 
     [HttpGet]
-    [Route("[action]/{id_cliente}")]
-    public Pedido GetPedidoDataCliente([FromBody]string dataHora, string id_cliente)
+    [Route("[action]/{id_cliente}/{date}")]
+    public Pedido GetPedidoDataCliente(string id_cliente, string date)
     {
-        return Pedido.GetPedido(dataHora, id_cliente);
+        return Pedido.GetPedido(date, id_cliente);
     }
 }
