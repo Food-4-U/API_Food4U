@@ -11,4 +11,11 @@ public class PedidoItensController: Controller
     {
         return PedidoItens.AdicionarPedidoItem(pedidoItem);
     }
+
+    [HttpGet]
+    [Route("[action}")]
+    public IEnumerable<PedidoItensFatura> GetItems(string id_pedido)
+    {
+        return PedidoItens.GetItemsFromPedido(id_pedido);
+    }
 }
