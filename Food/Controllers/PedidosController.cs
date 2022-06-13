@@ -26,4 +26,11 @@ public class PedidosController
     {
         return Pedido.AdicionarPedido(pedido);
     }
+
+    [HttpGet]
+    [Route("[action]/{id_cliente}")]
+    public Pedido GetPedidoDataCliente([FromBody]string dataHora, string id_cliente)
+    {
+        return Pedido.GetPedido(dataHora, id_cliente);
+    }
 }

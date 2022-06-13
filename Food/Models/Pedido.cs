@@ -1,9 +1,12 @@
-﻿namespace Food.Models;
+﻿using System.Data.SqlTypes;
+using MySql.Data.Types;
+
+namespace Food.Models;
 
 public class Pedido
 {
     public int id_pedido { get; set; }
-    public DateTime data { get; set; }
+    public string dataHora { get; set; }
     public decimal total { get; set; }
     public Boolean pago { get; set; }
     public decimal avaliação { get; set; }
@@ -20,12 +23,11 @@ public class Pedido
     public static string AdicionarPedido(Pedido pedido)
     {
         var dbCon = new DataBaseConnection();
-        var destaqueResult = 0;
-        
+
         var result = dbCon.DbNonQuery(
-            "INSERT INTO pedidos (id_pedido, data, total, pago, avaliação, aval_funcio, id_mesa, id_cliente) VALUES ('" +
+            "INSERT INTO pedidos (id_pedido, dataHora, total, pago, avaliação, aval_funcio, id_mesa, id_cliente) VALUES ('" +
             pedido.id_pedido + "', '" +
-            pedido.data + "', '" +
+            pedido.dataHora + "', '" +
             pedido.total + "', '" +
             pedido.pago + "', '" +
             pedido.avaliação + "', '" +
@@ -55,7 +57,7 @@ public class Pedido
         {
             Pedido pedido = null;
             pedido.id_pedido = reader.GetInt32(0);
-            pedido.data = reader.GetDateTime(1);
+            pedido.dataHora = reader.GetString(1);
             pedido.total = reader.GetDecimal(2);
             pedido.pago = reader.GetBoolean(3);
             pedido.avaliação = reader.GetDecimal(4);
@@ -81,7 +83,7 @@ public class Pedido
         {
             Pedido pedido = null;
             pedido.id_pedido = reader.GetInt32(0);
-            pedido.data = reader.GetDateTime(1);
+            pedido.dataHora = reader.GetString(1);
             pedido.total = reader.GetDecimal(2);
             pedido.pago = reader.GetBoolean(3);
             pedido.avaliação = reader.GetDecimal(4);
@@ -95,6 +97,34 @@ public class Pedido
         dbCon.Close();
         return pedidos;
 
+    }
+
+    public static Pedido? GetPedido(string dataHora, string id_cliente)
+    {
+        
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE dataHora = '" + dataHora + "' AND id_cliente = " +
+                                   id_cliente + ";");
+        if (reader.Read())
+        {
+            var pedido = new Pedido(); 
+            pedido.id_pedido = reader.GetInt32(0);
+            pedido.dataHora = reader.GetString(1);
+            pedido.total = reader.GetDecimal(2);
+            pedido.pago = reader.GetBoolean(3);
+            pedido.avaliação = reader.GetDecimal(4);
+            pedido.aval_funcio = reader.GetDecimal(5);
+            pedido.id_mesa = reader.GetInt32(6);
+            pedido.id_cliente = reader.GetInt32(7);
+            
+            dbCon.Close();
+            return pedido;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
     }
 }
 
