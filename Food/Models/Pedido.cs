@@ -55,7 +55,7 @@ public class Pedido
         var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_cliente = " + id + ";");
         while (reader.Read())
         {
-            Pedido pedido = null;
+            Pedido pedido = new Pedido();
             pedido.id_pedido = reader.GetInt32(0);
             pedido.dataHora = reader.GetString(1);
             pedido.total = reader.GetDecimal(2);
@@ -81,7 +81,7 @@ public class Pedido
         var reader = dbCon.DbQuery("SELECT * FROM pedidos;");
         while (reader.Read())
         {
-            Pedido pedido = null;
+            Pedido pedido = new Pedido();
             pedido.id_pedido = reader.GetInt32(0);
             pedido.dataHora = reader.GetString(1);
             pedido.total = reader.GetDecimal(2);

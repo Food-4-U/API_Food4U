@@ -42,7 +42,7 @@ public class PedidoItens
         var reader = dbCon.DbQuery("SELECT i.nome, pi.qtd, i.preco FROM pedidos_itens pi JOIN itens i USING (id_item) WHERE id_pedido = " + id_pedido + ";");
         while (reader.Read())
         {
-            PedidoItensFatura item = null;
+            PedidoItensFatura item = new PedidoItensFatura();
             item.nome = reader.GetString(0);
             item.qtd = reader.GetInt32(1);
             item.preco = reader.GetDecimal(2);

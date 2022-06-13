@@ -13,7 +13,7 @@ public class PedidoItensController: Controller
     }
 
     [HttpGet]
-    [Route("[action}")]
+    [Route("[action]/{id_pedido}")]
     public IEnumerable<PedidoItensFatura> GetItems(string id_pedido)
     {
         return PedidoItens.GetItemsFromPedido(id_pedido);
