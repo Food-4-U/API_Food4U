@@ -74,6 +74,11 @@ namespace Food.Controllers
                 categoria.nome = categoriaOnDB.nome;
             }
 
+            if (categoria.url == null)
+            {
+                categoria.url = categoriaOnDB.url;
+            }
+
             return Categoria.Update(id ,categoria);
         }
         
