@@ -19,7 +19,6 @@ public class PedidosController
         return Pedido.GetPedidosClientes(id);
     }
     
-
     [HttpPost]
     [Route("[action]")]
     public string RegistarPedidos([FromBody]Pedido pedido)
