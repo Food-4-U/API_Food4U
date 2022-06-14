@@ -48,7 +48,7 @@ public class Cartao
         var reader = dbCon.DbQuery("SELECT * FROM cartoes WHERE id_cliente = " + id + ";");
         while (reader.Read())
         {
-            Cartao cartao = null;
+            Cartao cartao = new Cartao();
             cartao.id_cartao = reader.GetInt32(0);
             cartao.numero = reader.GetString(1);
             cartao.nome_cartao = reader.GetString(2);

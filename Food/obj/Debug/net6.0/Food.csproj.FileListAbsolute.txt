@@ -750,3 +750,4 @@ C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Debug\net6.0\IronBarCode.dll
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Rafael\Desktop\Food-4-U\Food\Food\bin\Debug\net6.0\IronBarCode.dll

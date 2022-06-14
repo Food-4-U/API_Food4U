@@ -1,6 +1,6 @@
 ﻿namespace Food.Models;
 
-public class QrCode
+public class QRCode
 {
     
 }
