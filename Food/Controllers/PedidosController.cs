@@ -32,4 +32,11 @@ public class PedidosController
     {
         return Pedido.GetPedido(date, id_cliente);
     }
+    
+    [HttpGet]
+    [Route("[action]/{id}")]
+    public Pedido GetPedidoID(string id)
+    {
+        return Pedido.GetPedidoID(id);
+    }
 }
