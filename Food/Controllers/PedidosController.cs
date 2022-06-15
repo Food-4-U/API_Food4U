@@ -19,7 +19,6 @@ public class PedidosController
         return Pedido.GetPedidosClientes(id);
     }
     
-
     [HttpPost]
     [Route("[action]")]
     public string RegistarPedidos([FromBody]Pedido pedido)
@@ -28,9 +27,16 @@ public class PedidosController
     }
 
     [HttpGet]
-    [Route("[action]/{id_cliente}")]
-    public Pedido GetPedidoDataCliente([FromBody]string dataHora, string id_cliente)
+    [Route("[action]/{id_cliente}/{date}")]
+    public Pedido GetPedidoDataCliente(string id_cliente, string date)
     {
-        return Pedido.GetPedido(dataHora, id_cliente);
+        return Pedido.GetPedido(date, id_cliente);
+    }
+    
+    [HttpGet]
+    [Route("[action]/{id}")]
+    public Pedido GetPedidoID(string id)
+    {
+        return Pedido.GetPedidoID(id);
     }
 }
