@@ -52,7 +52,7 @@ public class Pedido
 
         List<Pedido> pedidos = new List<Pedido>();
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_cliente = " + id + ";");
+        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_cliente = " + id + " ORDER BY dataHora DESC;");
         while (reader.Read())
         {
             Pedido pedido = new Pedido();

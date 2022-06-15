@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj": {}
+    "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj": {
+    "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj",
+        "projectUniqueName": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
         "projectName": "Food",
-        "projectPath": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\Food.csproj",
-        "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tiago\\OneDrive\\Ambiente de Trabalho\\API Food_4_U\\API_Food4U\\Food\\obj\\",
+        "projectPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\Food.csproj",
+        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafael\\Desktop\\Food-4-U\\Food\\Food\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,6 +71,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[6.0.4, 6.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.4, 6.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[6.0.4, 6.0.4]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +93,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

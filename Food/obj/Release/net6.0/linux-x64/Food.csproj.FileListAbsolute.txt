@@ -1341,3 +1341,4 @@ C:\Users\Utilizador\Desktop\api\API_Food4U\Food\obj\Release\net6.0\linux-x64\ref
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\obj\Release\net6.0\linux-x64\Food.pdb
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\obj\Release\net6.0\linux-x64\Food.genruntimeconfig.cache
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\obj\Release\net6.0\linux-x64\ref\Food.dll
+C:\Users\Rafael\Desktop\Food-4-U\Food\Food\bin\Release\net6.0\linux-x64\IronBarCode.dll
