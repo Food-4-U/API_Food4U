@@ -52,7 +52,7 @@ public class Pedido
 
         List<Pedido> pedidos = new List<Pedido>();
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_cliente = " + id + " ORDER BY dataHora DESC;");
+        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_cliente = " + id + ";");
         while (reader.Read())
         {
             Pedido pedido = new Pedido();
@@ -126,36 +126,48 @@ public class Pedido
             return null;
         }
     }
-    
-    public static Pedido? GetPedidoID(string id)
+
+    public static decimal? GetAvgPedido()
     {
-        
         var dbCon = new DataBaseConnection();
-        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_pedido = " + id + ";");
+        var reader = dbCon.DbQuery("SELECT AVG(total) FROM pedidos ;");
+
         if (reader.Read())
         {
-            var pedido = new Pedido(); 
-            pedido.id_pedido = reader.GetInt32(0);
-            pedido.dataHora = reader.GetString(1);
-            pedido.total = reader.GetDecimal(2);
-            pedido.pago = reader.GetBoolean(3);
-            pedido.avaliação = reader.GetDecimal(4);
-            pedido.aval_funcio = reader.GetDecimal(5);
-            pedido.id_mesa = reader.GetInt32(6);
-            pedido.id_cliente = reader.GetInt32(7);
+            var total = reader.GetDecimal(0);
             
             dbCon.Close();
-            return pedido;
+            return total;
         }
         else
         {
             dbCon.Close();
             return null;
         }
+
+
+    }
+    
+    public static decimal? GetAvgPedidoGenero(string genero)
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT AVG(total) FROM pedidos JOIN clientes USING (id_cliente) where clientes.genero = '" + genero + "';");
+
+        if (reader.Read())
+        {
+            var total = reader.GetDecimal(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+
+
     }
 }
-
-
-
 
 
