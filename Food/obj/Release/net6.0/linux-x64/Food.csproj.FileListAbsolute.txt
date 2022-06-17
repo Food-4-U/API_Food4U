@@ -1650,3 +1650,4 @@ C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Release\net6.0\linux-x64\lib
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Release\net6.0\linux-x64\libhostpolicy.so
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Release\net6.0\linux-x64\libmscordaccore.so
 C:\Users\Utilizador\Desktop\api\API_Food4U\Food\bin\Release\net6.0\linux-x64\libmscordbi.so
+C:\Users\Rafael\Desktop\Food-4-U\Food\Food\bin\Release\net6.0\linux-x64\IronBarCode.dll

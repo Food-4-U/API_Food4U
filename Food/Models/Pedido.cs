@@ -126,6 +126,34 @@ public class Pedido
             return null;
         }
     }
+    
+    public static Pedido? GetPedidoID(string id)
+    {
+        
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT * FROM pedidos WHERE id_pedido = '" +
+                                   id + "';");
+        if (reader.Read())
+        {
+            var pedido = new Pedido(); 
+            pedido.id_pedido = reader.GetInt32(0);
+            pedido.dataHora = reader.GetString(1);
+            pedido.total = reader.GetDecimal(2);
+            pedido.pago = reader.GetBoolean(3);
+            pedido.avaliação = reader.GetDecimal(4);
+            pedido.aval_funcio = reader.GetDecimal(5);
+            pedido.id_mesa = reader.GetInt32(6);
+            pedido.id_cliente = reader.GetInt32(7);
+            
+            dbCon.Close();
+            return pedido;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
 
     public static decimal? GetAvgPedido()
     {
