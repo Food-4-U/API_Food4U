@@ -33,4 +33,18 @@ public class PedidosController
     {
         return Pedido.GetPedido(dataHora, id_cliente);
     }
+
+    [HttpGet]
+    [Route("[action]")]
+    public decimal? GetAvgPedido()
+    {
+        return Pedido.GetAvgPedido();
+    }
+    
+    [HttpGet]
+    [Route("[action]/{genero}")]
+    public decimal? GetAvgPedidoGenero(string genero)
+    {
+        return Pedido.GetAvgPedidoGenero(genero);
+    }
 }

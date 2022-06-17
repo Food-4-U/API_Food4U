@@ -126,6 +126,48 @@ public class Pedido
             return null;
         }
     }
+
+    public static decimal? GetAvgPedido()
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT AVG(total) FROM pedidos ;");
+
+        if (reader.Read())
+        {
+            var total = reader.GetDecimal(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+
+
+    }
+    
+    public static decimal? GetAvgPedidoGenero(string genero)
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT AVG(total) FROM pedidos JOIN clientes USING (id_cliente) where clientes.genero = '" + genero + "';");
+
+        if (reader.Read())
+        {
+            var total = reader.GetDecimal(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+
+
+    }
 }
 
 
