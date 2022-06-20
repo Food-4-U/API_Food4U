@@ -319,6 +319,50 @@ public class Item
                 return "{ \"status\" :\"error\" }";
             }
     }
+    
+    public static string AdicionarItemFavoritos(string id_cliente, string id_item)
+    {
+        var dbCon = new DataBaseConnection();
+        var destaqueResult = 0;
+
+        var result = dbCon.DbNonQuery(
+            "INSERT INTO favoritos (id_favoritos, favorito, clientes_id, itens_id_item) VALUES ('" +
+            null + "', '" +
+            1 + "', '" +
+            id_cliente + "', '" +
+            id_item + "');");
+        
+        dbCon.Close();
+            
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {   
+            return "{ \"status\" :\"error\" }";
+        }
+    }
+
+    public static string DeleteFromFavoritos(string id_cliente, string id_item)
+    {
+        var dbCon = new DataBaseConnection();
+        var destaqueResult = 0;
+
+        var result = dbCon.DbNonQuery(
+            "DELETE FROM favoritos WHERE clientes_id = '" + id_cliente + "' AND itens_id_item = '" + id_item + "';");
+        
+        dbCon.Close();
+            
+        if (result > 0)
+        {
+            return "{ \"status\" :\"ok\" }";
+        }
+        else
+        {   
+            return "{ \"status\" :\"error\" }";
+        }
+    }
 
     public static List<Item> Favorito(string id)
     {

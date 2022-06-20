@@ -153,6 +153,20 @@ namespace Food.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("[action]")]
+        public string AddFavorito(string id_cliente, string id_item)
+        {
+            return Item.AdicionarItemFavoritos(id_cliente, id_item);
+        }
+        
+        [HttpDelete]
+        [Route("[action]")]
+        public string DeleteFavorito(string id_cliente, string id_item)
+        {
+            return Item.DeleteFromFavoritos(id_cliente, id_item);
+        }
+
     }
 }
 
