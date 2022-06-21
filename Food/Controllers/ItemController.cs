@@ -154,14 +154,14 @@ namespace Food.Controllers
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("[action]/{id_cliente}/{id_item}")]
         public string AddFavorito(string id_cliente, string id_item)
         {
             return Item.AdicionarItemFavoritos(id_cliente, id_item);
         }
         
         [HttpDelete]
-        [Route("[action]")]
+        [Route("[action]/{id_cliente}/{id_item}")]
         public string DeleteFavorito(string id_cliente, string id_item)
         {
             return Item.DeleteFromFavoritos(id_cliente, id_item);
