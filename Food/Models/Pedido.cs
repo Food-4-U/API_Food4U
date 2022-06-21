@@ -196,6 +196,63 @@ public class Pedido
 
 
     }
+
+    public static int? GetCountPedidoGenero(string genero)
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT COUNT(total) FROM pedidos JOIN clientes USING (id_cliente) where clientes.genero = '" + genero + "';");
+
+        if (reader.Read())
+        {
+            var total = reader.GetInt32(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
+
+    public static decimal? GetTotalPedido()
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT SUM(total) FROM pedidos");
+
+        if (reader.Read())
+        {
+            var total = reader.GetDecimal(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
+    
+    public static decimal? GetDesvPedido()
+    {
+        var dbCon = new DataBaseConnection();
+        var reader = dbCon.DbQuery("SELECT stddev(total) FROM pedidos");
+
+        if (reader.Read())
+        {
+            var total = reader.GetDecimal(0);
+            
+            dbCon.Close();
+            return total;
+        }
+        else
+        {
+            dbCon.Close();
+            return null;
+        }
+    }
 }
 
 

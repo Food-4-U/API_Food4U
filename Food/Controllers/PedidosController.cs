@@ -53,4 +53,25 @@ public class PedidosController
     {
         return Pedido.GetAvgPedidoGenero(genero);
     }
+
+    [HttpGet]
+    [Route("[action]/{genero}")]
+    public decimal? GetCountPedidoGenero(string genero)
+    {
+        return Pedido.GetCountPedidoGenero(genero);
+    }
+    
+    [HttpGet]
+    [Route("[action]")]
+    public decimal? GetTotalPedido()
+    {
+        return Pedido.GetTotalPedido();
+    }
+    
+    [HttpGet]
+    [Route("[action]")]
+    public decimal? GetDesvPedido()
+    {
+        return Pedido.GetDesvPedido();
+    }
 }
