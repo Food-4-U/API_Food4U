@@ -9,7 +9,7 @@ public class DataBaseConnection
     public DataBaseConnection()
     {
         string cs =
-            @"server=food-4-you.cam7xmtivgt0.eu-west-2.rds.amazonaws.com;userid=admin;password=adminfood4u;database=food4u";
+            @"server=food-4-u.cam7xmtivgt0.eu-west-2.rds.amazonaws.com;userid=admin;password=adminfood4u;database=food4u";
         con = new MySqlConnection(cs);
         con.Open();
     }

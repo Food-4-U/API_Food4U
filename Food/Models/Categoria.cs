@@ -177,4 +177,12 @@ public class Categoria
             return "{ \"status\" :\"error\" }";
         }
     }
+    
+    //Create a method to add user
+    
+    
+    
+    
+    
+    
 }
